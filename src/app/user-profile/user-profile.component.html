@@ -1,0 +1,12 @@
+<div class="panel panel-default center-block">
+  <div class="panel-heading"><span class="glyphicon glyphicon-user"></span> {{userService.user.Name}} {{userService.user.Surname}}'s Profile</div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">Name: {{userService.user.Name}}</li>
+      <li class="list-group-item">Surname: {{userService.user.Surname}}</li>
+      <li class="list-group-item">E-mail: {{userService.user.Email}}</li>
+      <li class="list-group-item">ID: {{userService.user.ID}}</li>
+      <li class="list-group-item">Current attendance: {{userService.user.Attendance[0] || 'No attendance'}}</li>
+    </ul>
+  </div>
+</div>

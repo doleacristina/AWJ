@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="wrap-login col-md-4 col-md-offset-4">
+          <h2 style="margin-bottom: 30px">Registration</h2>
+            <p *ngIf="error" class="text-danger">
+              <span class="glyphicon glyphicon-exclamation-sign"></span> {{error}}
+            </p>
+            <form #registrationForm="ngForm">
+                <div class="form-group">
+                  <label for="">Username<span class="text-danger">*</span></label>
+                  <input [(ngModel)]="user.Username" #username="ngModel" type="text" class="form-control" name="username" placeholder="Username" required>
+                  <small *ngIf="username.invalid && (username.dirty || username.touched) && username.errors.required" class="text-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span> Username is required
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="">Password<span class="text-danger">*</span></label>
+                  <input [(ngModel)]="user.Password" #password="ngModel" type="password" class="form-control" name="password" placeholder="Password" required>
+                  <small *ngIf="password.invalid && (password.dirty || password.touched) && password.errors.required" class="text-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span> Password is required
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="">Name<span class="text-danger">*</span></label>
+                  <input [(ngModel)]="user.Name" #name="ngModel" type="text" class="form-control" name="name" placeholder="Name" required>
+                  <small *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required" class="text-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span> Name is required
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="">Surname<span class="text-danger">*</span></label>
+                  <input [(ngModel)]="user.Surname" #surname="ngModel" type="text" class="form-control" name="surname" placeholder="Surname" required>
+                  <small *ngIf="surname.invalid && (surname.dirty || surname.touched) && surname.errors.required" class="text-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span> Surname is required
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="">E-mail<span class="text-danger">*</span></label>
+                  <input [(ngModel)]="user.Email" #email="ngModel" type="email" class="form-control" name="email" placeholder="Email" required email>
+                  <small *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required" class="text-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span> E-mail is required
+                  </small>
+                  <small *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.email" class="text-danger">
+                    <br /><span class="glyphicon glyphicon-exclamation-sign"></span> E-mail format is invalid
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="">ID<span class="text-danger">*</span></label>
+                  <input [(ngModel)]="user.ID" #id="ngModel" type="text" class="form-control" name="id" placeholder="ID" required>
+                  <small *ngIf="id.invalid && (id.dirty || id.touched) && id.errors.required" class="text-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span> ID is required
+                  </small>
+                </div>
+              </form>
+              <button (click)="Register()" class="btn btn-primary">Register</button>
+              <button routerLink="/login" routerLinkActive="active" class="btn btn-default">Login</button>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">PROIECT AWJ</a>
+    </div>
+    <ul *ngIf="userService.isLoggedIn" class="nav navbar-nav">
+      <li><a routerLink="/attendance" routerLinkActive="active">Attendance</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+    </ul>
+    <div *ngIf="userService.isLoggedIn" class="pull-right items-right">
+      <span class="glyphicon glyphicon-user"></span> {{userService.user.Name}} {{userService.user.Surname}}
+      <span (click)="Logout()" style="cursor: pointer;" class="glyphicon glyphicon-log-out" title="Log out"></span>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
